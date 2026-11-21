@@ -1,0 +1,44 @@
+import React from 'react';
+
+export const PetalLogo = ({ className = 'h-8 w-auto' }) => {
+  return (
+    <svg
+      viewBox="0 0 48 48"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="Petal Progress Logo"
+    >
+      <defs>
+        <linearGradient id="petalGrad1" x1="12" y1="8" x2="36" y2="40" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#feadc8" />
+          <stop offset="50%" stopColor="#874d63" />
+          <stop offset="100%" stopColor="#6c364b" />
+        </linearGradient>
+        <linearGradient id="petalGrad2" x1="24" y1="4" x2="24" y2="28" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#ffd9e4" />
+          <stop offset="100%" stopColor="#8b4a62" />
+        </linearGradient>
+        <linearGradient id="leafGrad" x1="18" y1="28" x2="30" y2="44" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#abcfb1" />
+          <stop offset="100%" stopColor="#2e4e37" />
+        </linearGradient>
+      </defs>
+
+      {/* Stem & Leaves */}
+      <path d="M24 24 C24 34, 23 42, 24 45" stroke="#46664e" strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M24 33 C18 31, 14 36, 17 40 C21 41, 23 37, 24 33 Z" fill="url(#leafGrad)" />
+      <path d="M24 30 C30 28, 34 33, 31 37 C27 38, 25 34, 24 30 Z" fill="url(#leafGrad)" />
+
+      {/* Outer Blossom Petals */}
+      <path d="M24 10 C14 4, 6 16, 14 26 C18 29, 24 28, 24 26 Z" fill="url(#petalGrad1)" opacity="0.85" />
+      <path d="M24 10 C34 4, 42 16, 34 26 C30 29, 24 28, 24 26 Z" fill="url(#petalGrad1)" opacity="0.85" />
+      
+      {/* Center Main Petal */}
+      <path d="M24 6 C17 12, 17 22, 24 27 C31 22, 31 12, 24 6 Z" fill="url(#petalGrad2)" />
+      
+      {/* Golden Bud Center */}
+      <circle cx="24" cy="20" r="2.5" fill="#e2b053" />
+    </svg>
+  );
+};
